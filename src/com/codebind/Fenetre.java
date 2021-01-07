@@ -303,6 +303,7 @@ public class Fenetre extends JFrame implements ActionListener {
         ptableau.add(tableau1);
         ptableau.add(tableau2);
         ptableau.add(tableau3);
+
         //modif
         //ptableau.setBounds(200,200,800,500);
         Border lineborder = BorderFactory.createLineBorder(Color.black, 3);

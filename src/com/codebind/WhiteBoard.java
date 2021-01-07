@@ -27,6 +27,7 @@ public class WhiteBoard extends JTextField implements MouseListener, MouseMotion
         setOpaque(false);
         this.id = id;
         this.couleurPinceau = Color.BLACK;
+        this.couleurFond = Color.WHITE;
     }
 
     public void clear() {
