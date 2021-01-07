@@ -89,7 +89,7 @@ public class Fenetre extends JFrame implements ActionListener {
         creerPostite();
         creerBoiteaOutil();
         pack();
-        setSize(650,650);                   // Fixe la taille par défaut
+        setSize(1350,800);                   // Fixe la taille par défaut
         setVisible(true);                                // Affiche la fenetre
         setLocationRelativeTo(null);
         setTitle("Tableau Blanc Interractif");
