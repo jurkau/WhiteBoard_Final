@@ -35,7 +35,6 @@ public class Fenetre extends JFrame implements ActionListener {
     JButton btClear;
 
     // boutons permettant le choix du crayon, de la gomme et de sa couleur
-    JButton btnPen;
     JButton btnGomme;
     JButton btnColorRed;
     JButton btnColorBlack;
@@ -116,7 +115,6 @@ public class Fenetre extends JFrame implements ActionListener {
 
 
         // Initiallisation Boite a outil
-        btnPen = new JButton("Crayon");
         btnText = new JButton("Zone de texte");
         btnGomme = new JButton("Gomme", new ImageIcon("gomme.jpg"));
 
@@ -230,7 +228,6 @@ public class Fenetre extends JFrame implements ActionListener {
     {
         controlTools = new ControlTools(this, tableauCourant);
 
-        btnPen.addActionListener(controlTools);
         btnText.addActionListener(controlTools);
         btnGomme.addActionListener(controlTools);
 
@@ -333,8 +330,6 @@ public class Fenetre extends JFrame implements ActionListener {
         btnText.setBounds(1000,40,50,50);
         btnGomme.setBorder(lineborder);
         btnGomme.setBounds(1050,40,50,50);
-        btnPen.setBorder(lineborder);
-        btnPen.setBounds(1100,40,50,50);
         tableau1.setBounds(300,100,700,500);
         tableau2.setBounds(300,100,700,500);
         tableau3.setBounds(300,100,700,500);
@@ -359,7 +354,6 @@ public class Fenetre extends JFrame implements ActionListener {
         pano.add(butTab2);
         pano.add(butTab3);
         pano.add(btClear);
-        pano.add(btnPen);
         pano.add(btnText);
         pano.add(btnGomme);
         pano.add(btnColorBlack);
