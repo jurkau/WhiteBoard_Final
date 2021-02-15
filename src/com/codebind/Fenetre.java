@@ -14,7 +14,7 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenuItem itemImage;
     JMenuItem itemDiagramme;
     JMenuItem itemTableau;
-    JMenu droits;
+    //JMenu droits;
     JMenu insert;
     JMenu partage;
     JMenu save;
@@ -105,7 +105,7 @@ public class Fenetre extends JFrame implements ActionListener {
         itemDiagramme = new JMenuItem("Diagramme");
         itemImage = new JMenuItem("Image");
         itemTableau = new JMenuItem("Tableau");
-        droits = new JMenu("Droits");
+        //droits = new JMenu("Droits");
         insert = new JMenu("Insertion");
         partage = new JMenu("Partager");
         save = new JMenu("Enregistre");
@@ -192,7 +192,7 @@ public class Fenetre extends JFrame implements ActionListener {
 
 
         // ajout des éléments à la barre de Menu
-        barMenu.add(droits);
+        //barMenu.add(droits);
         barMenu.add(insert);
         barMenu.add(partage);
         barMenu.add(save);
