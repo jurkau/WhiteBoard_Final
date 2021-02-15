@@ -9,24 +9,28 @@ import java.io.IOException;
 
 public class Fenetre extends JFrame implements ActionListener {
 
-    // création du menu
+    // création des éléments du menu et des differents sous-menu
+
     JMenuBar barMenu;
     JMenuItem itemImage;
-    JMenuItem itemDiagramme;
     JMenuItem itemTableau;
+    JMenuItem itemCercle;
+    JMenuItem itemRectangle;
+    JMenuItem itemCarre;
     //JMenu droits;
+    JMenu Diagramme;
     JMenu insert;
     JMenu partage;
     JMenu save;
     JMenu connexion;
     JMenu inscription;
     JMenu police;
-    private JMenu format;
-    private JMenu pinceau;
-    private JMenuItem taille;
-    private JMenuItem couleurText;
-    private JMenu fond;
-    private JMenuItem couleurFond;
+    JMenu format;
+    JMenu pinceau;
+    JMenuItem taille;
+    JMenuItem couleurText;
+    JMenu fond;
+    JMenuItem couleurFond;
 
     // création des boutons de choix de tableaux et d'effacage générale
     JButton butTab1;
@@ -102,7 +106,7 @@ public class Fenetre extends JFrame implements ActionListener {
     {
         // initialisation menu
         barMenu = new JMenuBar();
-        itemDiagramme = new JMenuItem("Diagramme");
+        Diagramme = new JMenu("Forme");
         itemImage = new JMenuItem("Image");
         itemTableau = new JMenuItem("Tableau");
         //droits = new JMenu("Droits");
@@ -180,13 +184,13 @@ public class Fenetre extends JFrame implements ActionListener {
         barMenu.add(format);
 
         //gestion des actions si on clic sur un des menu
-        itemDiagramme.addActionListener(controlMenu);
+        Diagramme.addActionListener(controlMenu);
         itemImage.addActionListener(controlMenu);
         itemTableau.addActionListener(controlMenu);
 
 
         // ajout des éléments dans le JMenu insert
-        insert.add(itemDiagramme);
+        insert.add(Diagramme);
         insert.add(itemImage);
         insert.add(itemTableau);
 
