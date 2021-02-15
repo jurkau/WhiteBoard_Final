@@ -106,13 +106,15 @@ public class Fenetre extends JFrame implements ActionListener {
     {
         // initialisation menu
         barMenu = new JMenuBar();
-        Diagramme = new JMenu("Forme");
         itemImage = new JMenuItem("Image");
         itemTableau = new JMenuItem("Tableau");
+        itemCercle = new JMenuItem("Cercle");
+        itemCarre = new JMenuItem("Carré");
         //droits = new JMenu("Droits");
         insert = new JMenu("Insertion");
         partage = new JMenu("Partager");
         save = new JMenu("Enregistre");
+        Diagramme = new JMenu("Forme");
         connexion = new JMenu("Connexion");
         inscription = new JMenu("Inscription");
         police = new JMenu("Police");
