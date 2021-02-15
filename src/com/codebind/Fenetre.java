@@ -110,6 +110,7 @@ public class Fenetre extends JFrame implements ActionListener {
         itemTableau = new JMenuItem("Tableau");
         itemCercle = new JMenuItem("Cercle");
         itemCarre = new JMenuItem("Carré");
+        itemRectangle = new JMenuItem("Rectangle");
         //droits = new JMenu("Droits");
         insert = new JMenu("Insertion");
         partage = new JMenu("Partager");
@@ -186,15 +187,22 @@ public class Fenetre extends JFrame implements ActionListener {
         barMenu.add(format);
 
         //gestion des actions si on clic sur un des menu
-        Diagramme.addActionListener(controlMenu);
         itemImage.addActionListener(controlMenu);
         itemTableau.addActionListener(controlMenu);
+        itemCercle.addActionListener(controlMenu);
+        itemCarre.addActionListener(controlMenu);
+        itemRectangle.addActionListener(controlMenu);
 
 
         // ajout des éléments dans le JMenu insert
         insert.add(Diagramme);
         insert.add(itemImage);
         insert.add(itemTableau);
+
+        // ajout des différentes formes dans le sous menu diagramme
+        Diagramme.add(itemCercle);
+        Diagramme.add(itemCarre);
+        Diagramme.add(itemRectangle);
 
 
         // ajout des éléments à la barre de Menu
