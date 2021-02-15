@@ -14,7 +14,7 @@ public class ControlMenu implements ActionListener{
 
     public void actionPerformed(ActionEvent actionEvent) {
 
-        if(actionEvent.getSource() == fen.itemDiagramme)
+        if(actionEvent.getSource() == fen.itemCercle)
         {
 
         }
