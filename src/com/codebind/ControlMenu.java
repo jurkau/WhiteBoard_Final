@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.AbstractList;
 import java.util.Enumeration;
+import java.awt.Graphics;
 
 public class ControlMenu implements ActionListener{
 
@@ -14,10 +15,19 @@ public class ControlMenu implements ActionListener{
 
     public void actionPerformed(ActionEvent actionEvent) {
 
-        if(actionEvent.getSource() == fen.itemCercle)
-        {
+        if(actionEvent.getSource() == fen.itemCercle) {
 
         }
+
+        if(actionEvent.getSource() == fen.itemCarre) {
+
+        }
+
+        if(actionEvent.getSource() == fen.itemRectangle) {
+
+        }
+
+
 
     }
 }
