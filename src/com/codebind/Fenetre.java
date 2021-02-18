@@ -3,6 +3,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import javax.swing.JFileChooser;
 import java.awt.event.*;
 import java.io.IOException;
 
@@ -22,6 +23,7 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenu insert;
     JMenu partage;
     JMenu save;
+    JMenu ouvrir;
     JMenu connexion;
     JMenu inscription;
     JMenu police;
@@ -31,6 +33,9 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenuItem couleurText;
     JMenu fond;
     JMenuItem couleurFond;
+
+    // File Chooser permettant de sauvegarder et ouvrir des fichiers
+    JFileChooser fc;
 
     // création des boutons de choix de tableaux et d'effacage générale
     JButton butTab1;
@@ -115,6 +120,7 @@ public class Fenetre extends JFrame implements ActionListener {
         insert = new JMenu("Insertion");
         partage = new JMenu("Partager");
         save = new JMenu("Enregistre");
+        ouvrir = new JMenu("Ouvrir");
         Diagramme = new JMenu("Forme");
         connexion = new JMenu("Connexion");
         inscription = new JMenu("Inscription");
@@ -210,6 +216,7 @@ public class Fenetre extends JFrame implements ActionListener {
         barMenu.add(insert);
         barMenu.add(partage);
         barMenu.add(save);
+        barMenu.add(ouvrir);
         barMenu.add(connexion);
         barMenu.add(inscription);
         barMenu.add(police);
