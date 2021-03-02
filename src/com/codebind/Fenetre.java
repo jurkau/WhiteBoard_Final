@@ -113,23 +113,36 @@ public class Fenetre extends JFrame implements ActionListener {
         barMenu = new JMenuBar();
         itemImage = new JMenuItem("Image");
         itemTableau = new JMenuItem("Tableau");
+
+        // modification de l'écriture et insertion de formes
         itemCercle = new JMenuItem("Cercle");
+        itemCercle.setIcon(new ImageIcon("source/circle.webp"));
         itemCarre = new JMenuItem("Carré");
+        itemCarre.setIcon(new ImageIcon("source/square.png"));
         itemRectangle = new JMenuItem("Rectangle");
+        itemRectangle.setIcon(new ImageIcon("source/recrangle.png"));
+        police = new JMenu("Police");
+
         //droits = new JMenu("Droits");
         insert = new JMenu("Insertion");
         partage = new JMenu("Partager");
+
+        // Sauvegarde et ouverture
         save = new JMenu("Enregistre");
         ouvrir = new JMenu("Ouvrir");
+
+        // Insertion d'éléments
         Diagramme = new JMenu("Forme");
         connexion = new JMenu("Connexion");
-        inscription = new JMenu("Inscription");
-        police = new JMenu("Police");
 
+
+
+        inscription = new JMenu("Inscription");
 
         // Initiallisation Boite a outil
         btnText = new JButton("Zone de texte");
-        btnGomme = new JButton("Gomme", new ImageIcon("gomme.jpg"));
+        btnGomme = new JButton("Gomme");
+        btnGomme.setIcon(new ImageIcon("source/gomme.jpg"));
 
         btnColorBlack = new JButton();
         btnColorRed = new JButton();

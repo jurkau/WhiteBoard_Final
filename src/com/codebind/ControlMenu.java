@@ -36,10 +36,7 @@ public class ControlMenu implements ActionListener{
         }
 
         if(actionEvent.getSource() == fen.save) {
-            int returnVal = fc.showSaveDialog(fen);
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = fc.getSelectedFile();
-            }
+
         }
 
     }
