@@ -35,9 +35,6 @@ public class ControlMenu implements ActionListener{
 
         }
 
-        if(actionEvent.getSource() == fen.save) {
-
-        }
 
     }
 }

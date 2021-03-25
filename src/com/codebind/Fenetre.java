@@ -5,10 +5,19 @@ import javax.swing.border.Border;
 import java.awt.*;
 import javax.swing.JFileChooser;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public class Fenetre extends JFrame implements ActionListener {
+
+    private JTextField filename = new JTextField(), dir = new JTextField();
+    JTextArea textArea;
 
     // création des éléments du menu et des differents sous-menu
 
@@ -17,13 +26,15 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenuItem itemTableau;
     JMenuItem itemCercle;
     JMenuItem itemRectangle;
+    JMenuItem save;
+    JMenuItem ouvrir;
     JMenuItem itemCarre;
+
+
     //JMenu droits;
     JMenu Diagramme;
     JMenu insert;
     JMenu partage;
-    JMenu save;
-    JMenu ouvrir;
     JMenu connexion;
     JMenu inscription;
     JMenu police;
@@ -73,7 +84,6 @@ public class Fenetre extends JFrame implements ActionListener {
     public ControlTools controlTools;
 
     //création d'un tableau
-    //WhiteBoard whiteBoard;
     WhiteBoard tableau1;
     WhiteBoard tableau2;
     WhiteBoard tableau3;
@@ -94,7 +104,6 @@ public class Fenetre extends JFrame implements ActionListener {
         initAtribut();
         creerInterface();
         creerMenu();
-        creerPostite();
         creerBoiteaOutil();
         pack();
         setSize(1350,800);                   // Fixe la taille par défaut
@@ -104,8 +113,6 @@ public class Fenetre extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Gestion de la fermeture
     }
 
-    private void creerPostite() {
-    }
 
     public void initAtribut()
     {
@@ -115,12 +122,15 @@ public class Fenetre extends JFrame implements ActionListener {
         itemTableau = new JMenuItem("Tableau");
 
         // modification de l'écriture et insertion de formes
-        itemCercle = new JMenuItem("Cercle");
+        itemCercle = new JMenuItem();
         itemCercle.setIcon(new ImageIcon("source/circle.webp"));
-        itemCarre = new JMenuItem("Carré");
+
+        itemCarre = new JMenuItem();
         itemCarre.setIcon(new ImageIcon("source/square.png"));
-        itemRectangle = new JMenuItem("Rectangle");
+
+        itemRectangle = new JMenuItem();
         itemRectangle.setIcon(new ImageIcon("source/recrangle.png"));
+
         police = new JMenu("Police");
 
         //droits = new JMenu("Droits");
@@ -128,20 +138,18 @@ public class Fenetre extends JFrame implements ActionListener {
         partage = new JMenu("Partager");
 
         // Sauvegarde et ouverture
-        save = new JMenu("Enregistre");
-        ouvrir = new JMenu("Ouvrir");
+        save = new JMenuItem("Enregistre");
+        ouvrir = new JMenuItem("Ouvrir");
 
         // Insertion d'éléments
         Diagramme = new JMenu("Forme");
         connexion = new JMenu("Connexion");
 
-
-
         inscription = new JMenu("Inscription");
 
         // Initiallisation Boite a outil
         btnText = new JButton("Zone de texte");
-        btnGomme = new JButton("Gomme");
+        btnGomme = new JButton();
         btnGomme.setIcon(new ImageIcon("source/gomme.jpg"));
 
         btnColorBlack = new JButton();
@@ -211,6 +219,10 @@ public class Fenetre extends JFrame implements ActionListener {
         itemCercle.addActionListener(controlMenu);
         itemCarre.addActionListener(controlMenu);
         itemRectangle.addActionListener(controlMenu);
+
+        // gestion des actions de sauvegarde et d'ouverture
+        save.addActionListener(controlMenu);
+        ouvrir.addActionListener(controlMenu);
 
 
         // ajout des éléments dans le JMenu insert
@@ -520,4 +532,6 @@ public class Fenetre extends JFrame implements ActionListener {
     {
         return couleurFond;
     }
+
+
 }
