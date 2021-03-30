@@ -7,6 +7,7 @@ import java.util.AbstractList;
 import java.util.Enumeration;
 import java.awt.Graphics;
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
 
 public class ControlMenu implements ActionListener{
 
@@ -33,6 +34,32 @@ public class ControlMenu implements ActionListener{
 
         if(actionEvent.getSource() == fen.itemRectangle) {
 
+        }
+
+        if(actionEvent.getSource() == fen.save){
+
+            FileFilter docFilter = new FileTypeFilter(".docx", "Microsoft Word Documents");
+            FileFilter pdfFilter = new FileTypeFilter(".pdf", "PDF Documents");
+            FileFilter imgFilter = new FileTypeFilter(".png", "Png Documents");
+            FileFilter xlsFilter = new FileTypeFilter(".xlsx", "Microsoft Excel Documents");
+
+            JFileChooser c = new JFileChooser();
+            c.addChoosableFileFilter(docFilter);
+            c.addChoosableFileFilter(pdfFilter);
+            c.addChoosableFileFilter(xlsFilter);
+            c.addChoosableFileFilter(imgFilter);
+
+            c.setAcceptAllFileFilterUsed(true);
+
+            c.setDialogTitle("Specify a file to save");
+            int rval = c.showSaveDialog(fen);
+            if(rval == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = c.getSelectedFile();
+                System.out.println("Save as file:"  + fileToSave.getAbsolutePath());
+            }
+            if(rval == JFileChooser.CANCEL_OPTION) {
+                System.out.println("You pressed cancel");
+            }
         }
 
 

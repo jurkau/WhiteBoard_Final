@@ -3,10 +3,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import javax.swing.JFileChooser;
+import javax.swing.filechooser.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileOutputStream;
+import javax.jnlp.*;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import javax.swing.JFrame;
@@ -16,11 +17,10 @@ import javax.swing.JTextField;
 
 public class Fenetre extends JFrame implements ActionListener {
 
-    private JTextField filename = new JTextField(), dir = new JTextField();
-    JTextArea textArea;
+    JTextField filename;
+    JTextField dir;
 
     // création des éléments du menu et des differents sous-menu
-
     JMenuBar barMenu;
     JMenuItem itemImage;
     JMenuItem itemTableau;
@@ -116,6 +116,9 @@ public class Fenetre extends JFrame implements ActionListener {
 
     public void initAtribut()
     {
+        filename = new JTextField();
+        dir = new JTextField();
+
         // initialisation menu
         barMenu = new JMenuBar();
         itemImage = new JMenuItem("Image");
@@ -139,7 +142,9 @@ public class Fenetre extends JFrame implements ActionListener {
 
         // Sauvegarde et ouverture
         save = new JMenuItem("Enregistre");
+        save.addActionListener(controlMenu);
         ouvrir = new JMenuItem("Ouvrir");
+        ouvrir.addActionListener(controlMenu);
 
         // Insertion d'éléments
         Diagramme = new JMenu("Forme");
@@ -413,6 +418,7 @@ public class Fenetre extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         tableau1.setFont(new Font("Serif", Font.BOLD, 18));
         Object source = e.getSource();
         if(source == policeEcriture18){
@@ -434,6 +440,7 @@ public class Fenetre extends JFrame implements ActionListener {
         else if(source == policeEcriture8){
             tableau1.setFont(new Font("Serif", Font.BOLD, 8));
         }
+
         tableau2.setFont(new Font("Serif", Font.BOLD, 18));
         Object source1 = e.getSource();
         if(source1 == policeEcriture18){
@@ -455,6 +462,7 @@ public class Fenetre extends JFrame implements ActionListener {
         else if(source1 == policeEcriture8){
             tableau2.setFont(new Font("Serif", Font.BOLD, 8));
         }
+
         tableau3.setFont(new Font("Serif", Font.BOLD, 18));
         Object source2 = e.getSource();
         if(source2 == policeEcriture18){
@@ -476,12 +484,13 @@ public class Fenetre extends JFrame implements ActionListener {
         else if(source2 == policeEcriture8){
             tableau3.setFont(new Font("Serif", Font.BOLD, 8));
         }
+
         if(e.getSource() == btnText)
         {
             JPanel paneText = new JPanel();
             JTextArea textArea = new JTextArea();
             textArea.setDragEnabled(true);
-            textArea.setSize(100,100);
+            textArea.setSize(250,250);
             paneText.add(textArea);
             tableauCourant.add(paneText);
         }
