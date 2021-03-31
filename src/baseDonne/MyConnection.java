@@ -3,35 +3,26 @@ package baseDonne;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 public class MyConnection {
-    private Connection connection = null;
-    public MyConnection(){};
+    private static String serveur = "localhost";
+    private static String baseName = "Projet";
+    private static String user = "ablaye";
+    private static String password = "passer";
 
-    public  Connection getConnection() {
-        return connection;
-    }
+    private static Connection connection;
 
-    //créer une fonction de connexion à la base de données
-    public  Connection connect() throws SQLException {
-
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/projet","hweber","2011");
-
-        }catch (SQLException | ClassNotFoundException ex){
-            System.out.println(ex.getMessage());
+    public static Connection getInstance() {
+        if (connection == null) {
+            String url = "jdbc:mysql://" + serveur + "/" + baseName;
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection(url, user, password );
+            } catch (SQLException | ClassNotFoundException throwables) {
+                throwables.printStackTrace();
+            }
         }
         return connection;
-
     }
-
-
-
-
-
-
-
-
 }
