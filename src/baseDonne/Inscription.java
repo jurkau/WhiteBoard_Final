@@ -198,10 +198,9 @@ public class Inscription extends JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             // TODO add your handling code here:
-            MyConnection con = new MyConnection();
             String query = "insert into UTILISATEUR values (0, '"+ champNom.getText() +"', '"+ champPseudo.getText() +"', '"+ jPasswordField1.getText()+"')";
             System.out.println("requête: " + query);
-            Connection conn = con.connect();
+            Connection conn = MyConnection.getInstance();
             Statement statement = conn.createStatement();
             int res = statement.executeUpdate(query);
             if (res > 0){

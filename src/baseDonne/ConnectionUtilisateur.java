@@ -11,8 +11,6 @@ import javax.swing.*;
 
 public class ConnectionUtilisateur extends JFrame {
     public ConnectionUtilisateur() throws SQLException {
-        MyConnection con = new MyConnection();
-        con.connect();
         initComponents();
         setTitle("Connection");
         setVisible(true);
@@ -157,9 +155,8 @@ public class ConnectionUtilisateur extends JFrame {
 
     private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            MyConnection con = new MyConnection();
             String Sql = "SELECT * FROM UTILISATEUR WHERE pseudo = '" + jpseudo.getText() +"' AND password  = '"+ jpassword.getText() +"'";
-            Statement statement = con.connect().createStatement();
+            Statement statement = MyConnection.getInstance().createStatement();
             ResultSet Rs = statement.executeQuery(Sql);
             if (Rs.next()) {
                 System.out.println("connecté");
