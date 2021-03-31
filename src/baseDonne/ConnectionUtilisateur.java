@@ -1,5 +1,7 @@
 package baseDonne;
 
+import com.codebind.ControlConnection;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
@@ -25,6 +27,7 @@ public class ConnectionUtilisateur extends JFrame {
         jButton1 = new JButton();
         jpassword = new JPasswordField();
         JPanel jPanel2 = new JPanel();
+        ControlConnection controlConnection = new ControlConnection(this);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(new Rectangle(0, 0, 800, 600));
@@ -54,11 +57,7 @@ public class ConnectionUtilisateur extends JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Connection");
         jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jButton1.addActionListener(controlConnection);
 
      GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

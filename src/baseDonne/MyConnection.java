@@ -8,8 +8,8 @@ import java.sql.SQLException;
 public class MyConnection {
     private static String serveur = "localhost";
     private static String baseName = "Projet";
-    private static String user = "ablaye";
-    private static String password = "passer";
+    private static String user = "hweber";
+    private static String password = "2011";
 
     private static Connection connection;
 
