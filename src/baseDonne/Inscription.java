@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 public class Inscription extends JFrame {
     public Inscription(){
         initComponents();
+        setTitle("Inscription");
+        setVisible(true);
     }
 
     /**

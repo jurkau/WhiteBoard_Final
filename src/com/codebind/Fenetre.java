@@ -7,7 +7,7 @@ import javax.swing.filechooser.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileOutputStream;
-import javax.jnlp.*;
+import java.awt.event.*;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import javax.swing.JFrame;
@@ -266,15 +266,15 @@ public class Fenetre extends JFrame implements ActionListener {
 
     }
 
-    private void initListener(){
+    //private void initListener(){
         /*
          * Listener menubar - Format
          */
-        listener.ControlFormat controlFormat = new listener.ControlFormat(this);
+       /** listener.ControlFormat controlFormat = new listener.ControlFormat(this);
         taille.addActionListener(controlFormat);
         couleurText.addActionListener(controlFormat);
         couleurFond.addActionListener(controlFormat);
-    }
+    }**/
 
 
 
