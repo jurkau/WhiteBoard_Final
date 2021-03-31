@@ -358,6 +358,12 @@ public class Fenetre extends JFrame implements ActionListener {
         tableau1.setBorder(lineborder);
         tableau2.setBorder(lineborder);
         tableau3.setBorder(lineborder);
+
+        //tableau1.setCursor(new Cursor(Cursor.HAND_CURSOR)); changement de curseurs
+        tableau1.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("/home/hweber/Images/images.png").getImage(), new Point(0,60), "Mon curseur"));
+        tableau2.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("/home/hweber/Images/images.png").getImage(), new Point(0,60), "Mon curseur"));
+        tableau3.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(new ImageIcon("/home/hweber/Images/images.png").getImage(), new Point(0,60), "Mon curseur"));
+
         //tableau1.setPreferredSize(new Dimension(910,450));
         //tableau2.setPreferredSize(new Dimension(910,450));
         //tableau3.setPreferredSize(new Dimension(910,450));

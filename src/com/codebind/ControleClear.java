@@ -1,5 +1,6 @@
 package com.codebind;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.AbstractList;
@@ -21,16 +22,25 @@ public class ControleClear extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent)
     {
 
-        if (fen.tableauCourant.getId()== 1){
-            fen.tableau1.clear();
+        if (fen.tableauCourant.getId()== 1) {
+            Border lineborder = BorderFactory.createLineBorder(Color.black, 3);
+            fen.tableau1.setBorder(lineborder);
+            fen.tableau1.setBounds(300,100,700,500);
+            //fen.tableau1.clear();
         }
 
         if (fen.tableauCourant.getId()== 2){
-            fen.tableau2.clear();
+            Border lineborder = BorderFactory.createLineBorder(Color.black, 3);
+            fen.tableau2.setBorder(lineborder);
+            fen.tableau2.setBounds(300,100,700,500);
+            //fen.tableau2.clear();
         }
 
         if (fen.tableauCourant.getId()== 3){
-            fen.tableau3.clear();
+            Border lineborder = BorderFactory.createLineBorder(Color.black, 3);
+            fen.tableau3.setBorder(lineborder);
+            fen.tableau3.setBounds(300,100,700,500);
+            //fen.tableau3.clear();
         }
     }
 }

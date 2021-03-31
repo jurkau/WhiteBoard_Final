@@ -41,12 +41,11 @@ public class ControlMenu implements ActionListener{
             FileFilter docFilter = new FileTypeFilter(".docx", "Microsoft Word Documents");
             FileFilter pdfFilter = new FileTypeFilter(".pdf", "PDF Documents");
             FileFilter imgFilter = new FileTypeFilter(".png", "Png Documents");
-            FileFilter xlsFilter = new FileTypeFilter(".xlsx", "Microsoft Excel Documents");
+
 
             JFileChooser c = new JFileChooser();
             c.addChoosableFileFilter(docFilter);
             c.addChoosableFileFilter(pdfFilter);
-            c.addChoosableFileFilter(xlsFilter);
             c.addChoosableFileFilter(imgFilter);
 
             c.setAcceptAllFileFilterUsed(true);
