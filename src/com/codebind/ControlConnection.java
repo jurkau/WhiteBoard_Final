@@ -23,6 +23,7 @@ public class ControlConnection implements ActionListener {
         }
         else if(actionEvent.getSource() == cu.inscription){
             Inscription ins = new Inscription();
+            cu.dispose();
         }
 
     }

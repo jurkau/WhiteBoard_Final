@@ -35,8 +35,6 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenu Diagramme;
     JMenu insert;
     JMenu partage;
-    JMenuItem connexion;
-    JMenuItem inscription;
     JMenu police;
     JMenu format;
     JMenu pinceau;
@@ -149,10 +147,6 @@ public class Fenetre extends JFrame implements ActionListener {
         // Insertion d'éléments
         Diagramme = new JMenu("Forme");
 
-        // fonction de connexions
-        connexion = new JMenuItem("Connexion");
-        inscription = new JMenuItem("Inscription");
-
         // Initiallisation Boite a outil
         btnText = new JButton("Zone de texte");
         btnGomme = new JButton();
@@ -248,8 +242,6 @@ public class Fenetre extends JFrame implements ActionListener {
         barMenu.add(partage);
         barMenu.add(save);
         barMenu.add(ouvrir);
-        barMenu.add(connexion);
-        barMenu.add(inscription);
         barMenu.add(police);
         setJMenuBar(barMenu);
 
