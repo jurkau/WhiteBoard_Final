@@ -22,7 +22,7 @@ public class ConnectionUtilisateur extends JFrame {
         JLabel jLabel3 = new JLabel();
         jpseudo = new JTextField();
         JLabel jLabel1 = new JLabel();
-        JButton jButton1 = new JButton();
+        jButton1 = new JButton();
         jpassword = new JPasswordField();
         JPanel jPanel2 = new JPanel();
 
@@ -212,6 +212,7 @@ public class ConnectionUtilisateur extends JFrame {
 
     public JPasswordField jpassword;
     public JTextField jpseudo;
+    public JButton jButton1;
 }
 
 
