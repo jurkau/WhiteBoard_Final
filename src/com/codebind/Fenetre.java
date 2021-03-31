@@ -35,8 +35,8 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenu Diagramme;
     JMenu insert;
     JMenu partage;
-    JMenu connexion;
-    JMenu inscription;
+    JMenuItem connexion;
+    JMenuItem inscription;
     JMenu police;
     JMenu format;
     JMenu pinceau;
@@ -148,9 +148,10 @@ public class Fenetre extends JFrame implements ActionListener {
 
         // Insertion d'éléments
         Diagramme = new JMenu("Forme");
-        connexion = new JMenu("Connexion");
 
-        inscription = new JMenu("Inscription");
+        // fonction de connexions
+        connexion = new JMenuItem("Connexion");
+        inscription = new JMenuItem("Inscription");
 
         // Initiallisation Boite a outil
         btnText = new JButton("Zone de texte");
@@ -274,6 +275,8 @@ public class Fenetre extends JFrame implements ActionListener {
         couleurText.addActionListener(controlFormat);
         couleurFond.addActionListener(controlFormat);
     }
+
+
 
     public void creerBoiteaOutil()
     {
