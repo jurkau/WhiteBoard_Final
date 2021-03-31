@@ -25,6 +25,7 @@ public class ConnectionUtilisateur extends JFrame {
         jpseudo = new JTextField();
         JLabel jLabel1 = new JLabel();
         jButton1 = new JButton();
+        inscription = new JButton();
         jpassword = new JPasswordField();
         JPanel jPanel2 = new JPanel();
         ControlConnection controlConnection = new ControlConnection(this);
@@ -59,6 +60,12 @@ public class ConnectionUtilisateur extends JFrame {
         jButton1.setBorder(null);
         jButton1.addActionListener(controlConnection);
 
+        inscription.setBackground(new java.awt.Color(102, 153, 255));
+        inscription.setForeground(new java.awt.Color(255, 255, 255));
+        inscription.setText("Inscription");
+        inscription.setBorder(null);
+        inscription.addActionListener(controlConnection);
+
      GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -74,6 +81,7 @@ public class ConnectionUtilisateur extends JFrame {
                                                 .addComponent(jpseudo, GroupLayout.Alignment.LEADING))
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(jButton1, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(inscription, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 )))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,6 +99,8 @@ public class ConnectionUtilisateur extends JFrame {
                                 .addComponent(jpassword, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inscription, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 )
         );
@@ -212,6 +222,7 @@ public class ConnectionUtilisateur extends JFrame {
     public JPasswordField jpassword;
     public JTextField jpseudo;
     public JButton jButton1;
+    public JButton inscription;
 }
 
 
