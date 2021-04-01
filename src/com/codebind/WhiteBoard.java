@@ -11,7 +11,8 @@ public class WhiteBoard extends JTextField implements MouseListener, MouseMotion
     private Point prev = null;
     private Color couleurPinceau;
     private Color couleurFond;
-    private int taille;
+    private Stroke s;
+
 
     //Permet d'identifier le tableau pour faciliter le traitement pour l'action du bouton clear
     public int id;
@@ -24,7 +25,7 @@ public class WhiteBoard extends JTextField implements MouseListener, MouseMotion
     public WhiteBoard(int id) {
         addMouseListener(this);
         addMouseMotionListener(this);
-        setOpaque(false);
+        setOpaque(true);
         this.id = id;
         this.couleurPinceau = Color.BLACK;
         this.couleurFond = Color.WHITE;
@@ -34,12 +35,24 @@ public class WhiteBoard extends JTextField implements MouseListener, MouseMotion
         getGraphics().clearRect(0, 0, getWidth(), getHeight());
     }
 
+    public void drawOval(){
+        getGraphics().drawOval(50,60,100,120);
+    }
+
+    public void drawRect() {
+        getGraphics().drawRect(300,45,100,70);
+    }
+
+    public void drawCarre() {
+        getGraphics().drawRect(500,56,100,100);
+    }
+
     public int getId(){
         return this.id;
     }
     public void setTaille(int varTaille)
     {
-        this.taille = varTaille;
+
     }
 
     /**
@@ -50,7 +63,9 @@ public class WhiteBoard extends JTextField implements MouseListener, MouseMotion
     public void mouseDragged(final MouseEvent e) {
         prev=curr;
         curr=e.getPoint();
-        final Graphics g = getGraphics();
+        final Graphics2D g = (Graphics2D) getGraphics();
+        s = g.getStroke();
+        g.setStroke(new BasicStroke(6));
         g.setColor(couleurPinceau);
         g.drawLine(prev.x,prev.y,curr.x,curr.y);
     }

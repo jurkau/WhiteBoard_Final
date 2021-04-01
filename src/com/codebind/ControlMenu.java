@@ -24,18 +24,6 @@ public class ControlMenu implements ActionListener{
 
     public void actionPerformed(ActionEvent actionEvent) {
 
-        if(actionEvent.getSource() == fen.itemCercle) {
-
-        }
-
-        if(actionEvent.getSource() == fen.itemCarre) {
-
-        }
-
-        if(actionEvent.getSource() == fen.itemRectangle) {
-
-        }
-
         if(actionEvent.getSource() == fen.save){
 
             FileFilter docFilter = new FileTypeFilter(".docx", "Microsoft Word Documents");
@@ -43,7 +31,7 @@ public class ControlMenu implements ActionListener{
             FileFilter imgFilter = new FileTypeFilter(".png", "Png Documents");
 
 
-            JFileChooser c = new JFileChooser();
+            JFileChooser c = new JFileChooser(new File("c:\\"));
             c.addChoosableFileFilter(docFilter);
             c.addChoosableFileFilter(pdfFilter);
             c.addChoosableFileFilter(imgFilter);

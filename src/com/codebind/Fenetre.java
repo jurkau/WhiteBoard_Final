@@ -5,6 +5,8 @@ import javax.swing.border.Border;
 import java.awt.*;
 import javax.swing.filechooser.*;
 import java.awt.event.*;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.awt.event.*;
@@ -38,8 +40,12 @@ public class Fenetre extends JFrame implements ActionListener {
     JMenu police;
     JMenu format;
     JMenu pinceau;
-    JMenuItem taille;
-    JMenuItem couleurText;
+    JMenu taille;
+    JMenuItem taille1;
+    JMenuItem taille2;
+    JMenuItem taille3;
+    JMenuItem taille4;
+    JMenu couleurText;
     JMenu fond;
     JMenuItem couleurFond;
 
@@ -58,6 +64,7 @@ public class Fenetre extends JFrame implements ActionListener {
     JButton btnColorBlack;
     JButton btnColorBlue;
     JButton btnColorGreen;
+    JButton btnColorYellow;
 
     //Police
     JMenuItem policeEcriture18 = new JMenuItem("18");
@@ -72,8 +79,7 @@ public class Fenetre extends JFrame implements ActionListener {
     ImageIcon gomme;
 
     // boutons permettant l'insertion de zone de texte
-    JButton btnPostite;
-    JButton btnText;
+
 
     //Création des controles
     public ControlTableau controlTab;
@@ -122,15 +128,10 @@ public class Fenetre extends JFrame implements ActionListener {
         itemImage = new JMenuItem("Image");
         itemTableau = new JMenuItem("Tableau");
 
-        // modification de l'écriture et insertion de formes
-        itemCercle = new JMenuItem();
-        itemCercle.setIcon(new ImageIcon("source/circle.webp"));
-
-        itemCarre = new JMenuItem();
-        itemCarre.setIcon(new ImageIcon("source/square.png"));
-
-        itemRectangle = new JMenuItem();
-        itemRectangle.setIcon(new ImageIcon("source/recrangle.png"));
+        // modification de la taille de police et insertion de formes
+        itemCercle = new JMenuItem("Cercle");
+        itemCarre = new JMenuItem("Carre");
+        itemRectangle = new JMenuItem("Rectangle");
 
         police = new JMenu("Police");
 
@@ -148,7 +149,6 @@ public class Fenetre extends JFrame implements ActionListener {
         Diagramme = new JMenu("Forme");
 
         // Initiallisation Boite a outil
-        btnText = new JButton("Zone de texte");
         btnGomme = new JButton();
         btnGomme.setIcon(new ImageIcon("source/gomme.jpg"));
 
@@ -156,6 +156,7 @@ public class Fenetre extends JFrame implements ActionListener {
         btnColorRed = new JButton();
         btnColorBlue = new JButton();
         btnColorGreen = new JButton();
+        btnColorYellow = new JButton();
         panToolBox = new JPanel();
 
         // Initialisation image gomme
@@ -200,8 +201,17 @@ public class Fenetre extends JFrame implements ActionListener {
         format = new JMenu("Format");
 
         pinceau = new JMenu("Pinceau");
-        taille = new JMenuItem("Changer la taille");
-        couleurText= new JMenuItem("Changer la couleur");
+        taille = new JMenu("Changer la taille");
+        taille1 = new JMenuItem("15");
+        taille2 = new JMenuItem("30");
+        taille3 = new JMenuItem("5");
+        taille4 = new JMenuItem("10");
+        taille.add(taille1);
+        taille1.addActionListener(controlTools);
+        taille.add(taille2);
+        taille.add(taille3);
+        taille.add(taille4);
+        couleurText= new JMenu("Changer la couleur");
         pinceau.add(taille);
         pinceau.add(couleurText);
 
@@ -274,7 +284,7 @@ public class Fenetre extends JFrame implements ActionListener {
     {
         controlTools = new ControlTools(this, tableauCourant);
 
-        btnText.addActionListener(controlTools);
+
         btnGomme.addActionListener(controlTools);
 
         btnColorBlack.addActionListener(controlTools);
@@ -288,6 +298,13 @@ public class Fenetre extends JFrame implements ActionListener {
 
         btnColorGreen.addActionListener(controlTools);
         btnColorGreen.setBackground(Color.GREEN);
+
+        btnColorYellow.addActionListener(controlTools);
+        btnColorYellow.setBackground(Color.YELLOW);
+
+        itemCarre.addActionListener(controlTools);
+        itemRectangle.addActionListener(controlTools);
+        itemCercle.addActionListener(controlTools);
     }
 
     public void creerInterface()
@@ -378,8 +395,8 @@ public class Fenetre extends JFrame implements ActionListener {
         btnColorBlue.setBounds(900,40,50,50);
         btnColorGreen.setBorder(lineborder);
         btnColorGreen.setBounds(950,40,50,50);
-        btnText.setBorder(lineborder);
-        btnText.setBounds(1000,40,50,50);
+        btnColorYellow.setBorder(lineborder);
+        btnColorYellow.setBounds(1000,40,50,50);
         btnGomme.setBorder(lineborder);
         btnGomme.setBounds(1050,40,50,50);
         tableau1.setBounds(300,100,700,500);
@@ -406,12 +423,12 @@ public class Fenetre extends JFrame implements ActionListener {
         pano.add(butTab2);
         pano.add(butTab3);
         pano.add(btClear);
-        pano.add(btnText);
         pano.add(btnGomme);
         pano.add(btnColorBlack);
         pano.add(btnColorRed);
         pano.add(btnColorBlue);
         pano.add(btnColorGreen);
+        pano.add(btnColorYellow);
         pano.setLayout(null);
         setContentPane(pano);
 
@@ -486,15 +503,6 @@ public class Fenetre extends JFrame implements ActionListener {
             tableau3.setFont(new Font("Serif", Font.BOLD, 8));
         }
 
-        if(e.getSource() == btnText)
-        {
-            JPanel paneText = new JPanel();
-            JTextArea textArea = new JTextArea();
-            textArea.setDragEnabled(true);
-            textArea.setSize(250,250);
-            paneText.add(textArea);
-            tableauCourant.add(paneText);
-        }
     }
 
     /*

@@ -164,7 +164,7 @@ public class ConnectionUtilisateur extends JFrame {
 
     private void jButton1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            String Sql = "SELECT * FROM UTILISATEUR WHERE pseudo = '" + jpseudo.getText() +"' AND password  = '"+ jpassword.getText() +"'";
+            String Sql = "SELECT * FROM utilisateur WHERE pseudo = '" + jpseudo.getText() +"' AND password  = '"+ jpassword.getText() +"'";
             Statement statement = MyConnection.getInstance().createStatement();
             ResultSet Rs = statement.executeQuery(Sql);
             if (Rs.next()) {

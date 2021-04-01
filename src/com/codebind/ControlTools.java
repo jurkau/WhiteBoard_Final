@@ -27,14 +27,9 @@ public class ControlTools implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
 
 
-        if(actionEvent.getSource() == fen.btnText)
+        if(actionEvent.getSource() == fen.btnColorYellow)
         {
-            JPanel paneText = new JPanel();
-            JTextArea textArea = new JTextArea();
-            textArea.setDragEnabled(true);
-            textArea.setSize(100,100);
-            paneText.add(textArea);
-            fen.tableauCourant.add(paneText);
+            whiteBoard.setCouleurPinceau(Color.YELLOW);
         }
 
 
@@ -63,6 +58,22 @@ public class ControlTools implements ActionListener {
         if(actionEvent.getSource() == fen.btnGomme)
         {
             whiteBoard.setCouleurPinceau(Color.WHITE);
+        }
+
+        if(actionEvent.getSource() == fen.taille1){
+            whiteBoard.setTaille(15);
+        }
+
+        if(actionEvent.getSource() == fen.itemCercle) {
+            whiteBoard.drawOval();
+        }
+
+        if(actionEvent.getSource() == fen.itemCarre) {
+            whiteBoard.drawCarre();
+        }
+
+        if(actionEvent.getSource() == fen.itemRectangle) {
+            whiteBoard.drawRect();
         }
 
     }
